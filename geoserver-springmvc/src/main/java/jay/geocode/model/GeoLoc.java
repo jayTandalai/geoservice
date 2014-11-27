@@ -10,6 +10,9 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @Entity
@@ -35,9 +38,13 @@ public class GeoLoc implements Serializable {
 	private long id;
 
 	@Column(name = "lat")
+	@Min(-85)
+      @Max(85)
 	private String lat;
 
 	@Column(name = "lon")
+	@Min(-180)
+      @Max(180)
 	private String lon;
 
 	public long getId() {

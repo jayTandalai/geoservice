@@ -35,7 +35,7 @@ public class GeoLocationResource {
 
 	@GET
 	@Timed
-	@Path("/{lat}-{lon}")
+	@Path("/{lat}/{lon}")
 	@UnitOfWork
 	public Response getData(@PathParam("lat") float lat, @PathParam("lon") float lon) {
 		logger.debug("lat-lon:"+ lat+"--"+lon);

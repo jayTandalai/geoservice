@@ -11,6 +11,9 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
@@ -31,10 +34,14 @@ public class GeoLoc {
 	private Long id;
 
 	@Column(name = "lat", nullable = false)
+	@Min(-85)
+      @Max(85)
     private double lat;
 
     @Column(name = "lon", nullable = false)
-    private double lon;
+    	@Min(-180)
+	@Max(180)
+	private double lon;
 
 	@JsonProperty
 	public long getId() {

@@ -41,7 +41,7 @@ public class RestController {
 	}
 
 	/* Ger a single objct in Json form in Spring Rest Services */
-	@RequestMapping(value = "/{lat}-{lon}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{lat}{lon}", method = RequestMethod.GET)
 	public @ResponseBody
 	GeoLoc getData(@PathVariable("lat") double lat,
 			@PathVariable("lon") double lon) {
